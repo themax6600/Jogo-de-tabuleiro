@@ -1,0 +1,52 @@
+[
+    {
+        "titulo": "Qual é a capital do Brasil?",
+        "respostas": [
+            "Rio de Janeiro",
+            "Brasília",
+            "São Paulo",
+            "Belo Horizonte"
+        ],
+        "correta": 1
+    },
+    {
+        "titulo": "Qual elemento químico tem o símbolo 'O'?",
+        "respostas": [
+            "Ouro",
+            "Oxigênio",
+            "Prata",
+            "Ferro"
+        ],
+        "correta": 1
+    },
+    {
+        "titulo": "Quantos continentes existem no mundo?",
+        "respostas": [
+            "Cinco",
+            "Seis",
+            "Sete",
+            "Oito"
+        ],
+        "correta": 2
+    },
+    {
+        "titulo": "Quem escreveu 'Dom Quixote'?",
+        "respostas": [
+            "Miguel de Cervantes",
+            "William Shakespeare",
+            "Machado de Assis",
+            "José Saramago"
+        ],
+        "correta": 0
+    },
+    {
+        "titulo": "Qual planeta é conhecido como planeta vermelho?",
+        "respostas": [
+            "Vênus",
+            "Marte",
+            "Júpiter",
+            "Saturno"
+        ],
+        "correta": 1
+    }
+]
