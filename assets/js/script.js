@@ -30,7 +30,6 @@ document.getElementById('dado').addEventListener('click', () => {
     sortearPergunta();
 });
 
-// Listener do botão acertou (só uma vez)
 document.querySelector('.alternativa').addEventListener('click', () => {
     card.classList.add('visually-hidden');
     const jogador = jogadores[jogadorAtual];
@@ -47,10 +46,9 @@ document.querySelector('.alternativa').addEventListener('click', () => {
     jogadorAtual = (jogadorAtual + 1) % jogadores.length;
 });
 
-// Listener do botão errou (só uma vez)
 document.querySelector('.alternativa').addEventListener('click', () => {
     card.classList.add('visually-hidden');
-    // Não anda
+
     atualizarPosicoes();
     jogadorAtual = (jogadorAtual + 1) % jogadores.length;
 });
