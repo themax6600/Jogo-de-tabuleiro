@@ -1,17 +1,40 @@
 const resut = document.getElementById('resut');
 const jogs = document.getElementById('jogs');
 const board = document.getElementById('board');
-const posisao = document.getElementById('posisao');
+const card = document.getElementById('cards');
+const title = document.getElementById('title');
+let perguntas = [];
+
+fetch('./assets/perguntas.json')
+    .then(response => response.json())
+    .then(data => {
+        perguntas = data;
+    });
 
 const numCells1Linha = 20;
 
+function sortearPergunta() {
+    const questao = Math.floor(Math.random() * perguntas.length);
+        title.textContent = perguntas[questao].titulo
+    return perguntas[questao];
+}
 
 document.getElementById('dado').addEventListener('click', () => {
-    const result = Math.floor(Math.random() * 6) + 1;
-    resut.textContent = result;
+    if (jogadores.length === 0) {
+        alert('não há jogador suficiente não viu');
+        return;
+    }
+    resultadoDado = Math.floor(Math.random() * 6) + 1;
+    resut.textContent = resultadoDado;
+    card.classList.remove('visually-hidden');
+    sortearPergunta();
+});
 
+// Listener do botão acertou (só uma vez)
+document.querySelector('.alternativa').addEventListener('click', () => {
+    card.classList.add('visually-hidden');
     const jogador = jogadores[jogadorAtual];
-    jogador.posicao += result;
+    jogador.posicao += resultadoDado;
 
     if (jogador.posicao >= 20) {
         jogador.posicao = 20;
@@ -21,9 +44,17 @@ document.getElementById('dado').addEventListener('click', () => {
     }
 
     atualizarPosicoes();
-
     jogadorAtual = (jogadorAtual + 1) % jogadores.length;
 });
+
+// Listener do botão errou (só uma vez)
+document.querySelector('.alternativa').addEventListener('click', () => {
+    card.classList.add('visually-hidden');
+    // Não anda
+    atualizarPosicoes();
+    jogadorAtual = (jogadorAtual + 1) % jogadores.length;
+});
+
 
 document.querySelectorAll('li').forEach(function (linha) {
     linha.addEventListener('click', function () {
