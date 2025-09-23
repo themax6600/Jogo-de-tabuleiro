@@ -3,6 +3,7 @@ const jogs = document.getElementById('jogs');
 const board = document.getElementById('board');
 const card = document.getElementById('cards');
 const title = document.getElementById('title');
+const respost = document.getElementById('resposta');
 let perguntas = [];
 
 fetch('./assets/perguntas.json')
@@ -13,10 +14,22 @@ fetch('./assets/perguntas.json')
 
 const numCells1Linha = 20;
 
-function sortearPergunta() {
-    const questao = Math.floor(Math.random() * perguntas.length);
-        title.textContent = perguntas[questao].titulo
-    return perguntas[questao];
+function sortearPergunta() { 
+    const questaoIndex = Math.floor(Math.random() * perguntas.length);
+    const questao = perguntas[questaoIndex];
+    title.textContent = questao.titulo;
+    respost.innerHTML = '';
+
+    questao.respostas.forEach((resposta, index) => {
+        const botao = document.createElement('button');
+        botao.textContent = resposta;
+        botao.classList.add("alternativa");
+        botao.value = index;
+
+        botao.onclick = () => verificarResposta(index, questao.correta);
+        respost.appendChild(botao);
+    });
+    return questao;
 }
 
 document.getElementById('dado').addEventListener('click', () => {

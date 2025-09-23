@@ -7,7 +7,8 @@
             "São Paulo",
             "Belo Horizonte"
         ],
-        "correta": 1
+        "correta": 1,
+        "id": 1
     },
     {
         "titulo": "Qual elemento químico tem o símbolo 'O'?",
@@ -17,7 +18,8 @@
             "Prata",
             "Ferro"
         ],
-        "correta": 1
+        "correta": 1,
+        "id": 2
     },
     {
         "titulo": "Quantos continentes existem no mundo?",
@@ -27,7 +29,8 @@
             "Sete",
             "Oito"
         ],
-        "correta": 2
+        "correta": 2,
+        "id": 3
     },
     {
         "titulo": "Quem escreveu 'Dom Quixote'?",
@@ -37,7 +40,8 @@
             "Machado de Assis",
             "José Saramago"
         ],
-        "correta": 0
+        "correta": 0,
+        "id": 4
     },
     {
         "titulo": "Qual planeta é conhecido como planeta vermelho?",
@@ -47,6 +51,7 @@
             "Júpiter",
             "Saturno"
         ],
-        "correta": 1
+        "correta": 1,
+        "id": 5
     }
 ]
