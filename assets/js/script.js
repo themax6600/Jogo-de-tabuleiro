@@ -6,15 +6,17 @@ const title = document.getElementById('title');
 const respost = document.getElementById('resposta');
 let perguntas = [];
 
-fetch('./assets/perguntas.json')
+
+fetch('./assets/perguntas.json') 
     .then(response => response.json())
     .then(data => {
         perguntas = data;
+        sortearPergunta();
     });
 
 const numCells1Linha = 20;
 
-function sortearPergunta() { 
+function sortearPergunta() {
     const questaoIndex = Math.floor(Math.random() * perguntas.length);
     const questao = perguntas[questaoIndex];
     title.textContent = questao.titulo;
@@ -26,10 +28,34 @@ function sortearPergunta() {
         botao.classList.add("alternativa");
         botao.value = index;
 
-        botao.onclick = () => verificarResposta(index, questao.correta);
+        botao.addEventListener('click', () => {
+            verificarResposta(index, questao.correta);
+        });
+
         respost.appendChild(botao);
     });
-    return questao;
+}
+
+function verificarResposta(indiceEscolhido, indiceCorreto) {
+    if (indiceEscolhido === indiceCorreto) {
+
+        const jogador = jogadores[jogadorAtual];
+        jogador.posicao += resultadoDado;
+
+        if (jogador.posicao >= 20) {
+            jogador.posicao = 20;
+            atualizarPosicoes();
+            alert(`${jogador.nome} venceu! 🎉`);
+            return;
+        }
+
+        atualizarPosicoes();
+        jogadorAtual = (jogadorAtual + 1) % jogadores.length;
+    } else {
+        jogadorAtual = (jogadorAtual + 1) % jogadores.length;
+    }
+
+    card.classList.add('visually-hidden');
 }
 
 document.getElementById('dado').addEventListener('click', () => {
@@ -42,30 +68,6 @@ document.getElementById('dado').addEventListener('click', () => {
     card.classList.remove('visually-hidden');
     sortearPergunta();
 });
-
-document.querySelector('.alternativa').addEventListener('click', () => {
-    card.classList.add('visually-hidden');
-    const jogador = jogadores[jogadorAtual];
-    jogador.posicao += resultadoDado;
-
-    if (jogador.posicao >= 20) {
-        jogador.posicao = 20;
-        atualizarPosicoes();
-        alert(`${jogador.nome} venceu! 🎉`);
-        return;
-    }
-
-    atualizarPosicoes();
-    jogadorAtual = (jogadorAtual + 1) % jogadores.length;
-});
-
-document.querySelector('.alternativa').addEventListener('click', () => {
-    card.classList.add('visually-hidden');
-
-    atualizarPosicoes();
-    jogadorAtual = (jogadorAtual + 1) % jogadores.length;
-});
-
 
 document.querySelectorAll('li').forEach(function (linha) {
     linha.addEventListener('click', function () {
@@ -152,7 +154,7 @@ function createCell(i) {
     cellNumber.classList.add("cell-number");
     cellNumber.textContent = i + 1;
 
-    if(i=== 20){
+    if (i === 20) {
         cellNumber.textContent = '';
     }
 
