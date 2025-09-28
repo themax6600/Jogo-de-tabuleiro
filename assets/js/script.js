@@ -7,7 +7,7 @@ const respost = document.getElementById('resposta');
 let perguntas = [];
 
 
-fetch('./assets/perguntas.json') 
+fetch('./assets/perguntas.json')
     .then(response => response.json())
     .then(data => {
         perguntas = data;
@@ -83,18 +83,51 @@ let jogadorAtual = 0;
 function criarJogadores(qtd) {
     jogadores = [];
     const cores = ['red', 'blue', 'green', 'orange'];
+    const inputContainer = document.getElementById('input-nomes');
+    inputContainer.innerHTML = '';
 
     for (let i = 0; i < qtd; i++) {
-        jogadores.push({
-            nome: `Jogador ${i + 1}`,
-            cor: cores[i],
-            posicao: 0,
-            peca: criarPeca(cores[i])
-        });
+        const label = document.createElement('label');
+        label.textContent = `Nome do Jogador ${i + 1}: `;
+
+        const input = document.createElement('input');
+        if (i === 0) input.classList.add("jogador1");
+        if (i === 1) input.classList.add("jogador2");
+        if (i === 2) input.classList.add("jogador3");
+        if (i === 3) input.classList.add("jogador4");
+        input.type = 'text';
+        input.id = `jogador-nome-${i}`;
+        input.placeholder = `Jogador ${i + 1}`;
+
+        label.appendChild(input);
+        inputContainer.appendChild(label);
     }
 
-    atualizarPosicoes();
+    const botaoIniciar = document.createElement('button');
+    botaoIniciar.textContent = 'Começar Jogo';
+    botaoIniciar.classList.add("btnComecar");
+    botaoIniciar.addEventListener('click', () => {
+        jogadores = [];
+
+        for (let i = 0; i < qtd; i++) {
+            const nomeInput = document.getElementById(`jogador-nome-${i}`);
+            const nome = nomeInput.value.trim() || `Jogador ${i + 1}`;
+
+            jogadores.push({
+                nome: nome,
+                cor: cores[i],
+                posicao: 0,
+                peca: criarPeca(cores[i], nome)
+            });
+        }
+
+        inputContainer.innerHTML = '';
+        atualizarPosicoes();
+    });
+
+    inputContainer.appendChild(botaoIniciar);
 }
+
 
 function criarPeca(cor) {
     const peca = document.createElement("div");

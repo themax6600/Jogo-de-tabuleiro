@@ -9,16 +9,16 @@
     <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
 </head>
 
-<body class="bg-secondary">
+<body class="d-flex justify-content-center">
     <div class="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center visually-hidden"
         id="cards" style="z-index: 1050; background: rgba(0,0,0,0.5);">
-        <div class="bg-light rounded-3 d-flex flex-column align-items-center p-5 m-5">
+        <div class="bg-light rounded-3 d-flex flex-column align-items-center p-3">
             <h1 id="title"></h1>
             <div class="alternativa d-flex justify-content-evenly w-100 mt-4" id="resposta"></div>
         </div>
     </div>
-    <div class="container d-flex mt-5 mb-5">
-        <div class="col">
+    <div class="container d-flex">
+        <div class="col mt-5">
             <div class="container">
                 <h2>Numero de jogadores:<span id="jogs"></span></h2>
                 <ul class="container d-flex">
@@ -27,6 +27,7 @@
                     <li class="numJog m-1 rounded-2 border-0 text-center" id="li3" value="3">3</li>
                     <li class="numJog m-1 rounded-2 border-0 text-center" id="li4" value="4">4</li>
                 </ul>
+                <div id="input-nomes"></div>
             </div>
             <div class="container mt-5">
                 <button class="dado w-75 h-75 border-0 bg-white" id="dado">
