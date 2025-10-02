@@ -97,10 +97,31 @@ function criarJogadores(qtd) {
         if (i === 3) input.classList.add("jogador4");
         input.type = 'text';
         input.id = `jogador-nome-${i}`;
+        input.name = 'nome';
         input.placeholder = `Jogador ${i + 1}`;
 
         label.appendChild(input);
         inputContainer.appendChild(label);
+    }
+
+const inputContainer1 = document.getElementById('input-nomes');
+
+for (let i = 0; i < qtd; i++) {
+        const label1 = document.createElement('label');
+        label1.textContent = `Idade do jogador ${i + 1}: `;
+
+        const input1 = document.createElement('input');
+        if (i === 0) input1.classList.add("idade1");
+        if (i === 1) input1.classList.add("idade2");
+        if (i === 2) input1.classList.add("idade3");
+        if (i === 3) input1.classList.add("idade4");
+        input1.type = 'text';
+        input1.id = `jogador-idade-${i}`;
+        input1.name = 'idade';
+        input1.placeholder = `Idade ${i + 1}`;
+
+        label1.appendChild(input1);
+        inputContainer1.appendChild(label1);
     }
 
     const botaoIniciar = document.createElement('button');
