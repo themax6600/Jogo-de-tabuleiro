@@ -12,35 +12,35 @@ body{
     margin: 2px;
 }
 
-.jogador1{
+.jogador1, .idade1{
     background-color: red;
     border: 0;
 }
-.jogador1::placeholder{
-    color: #000000;
+.jogador1::placeholder, .idade1::placeholder{
+    color: #ffffff;
     padding: 1rem;
 }
-.jogador2{
+.jogador2, .idade2{
     background-color: blue;
     border: 0;
 }
-.jogador2::placeholder{
+.jogador2::placeholder, .idade2::placeholder{
     color: #ffffff;
     padding: 1rem;
 }
-.jogador3{
+.jogador3, .idade3{
     background-color: green;
     border: 0;
 }
-.jogador3::placeholder{
+.jogador3::placeholder, .idade3::placeholder{
     color: #ffffff;
     padding: 1rem;
 }
-.jogador4{
+.jogador4, .idade4{
     background-color: yellow;
     border: 0;
 }
-.jogador4::placeholder{
+.jogador4::placeholder, .idade4::placeholder{
     color: #000000;
     padding: 1rem;
 }
@@ -123,4 +123,15 @@ body{
     height: 4rem;
     border-radius: 3rem;
     margin: 0.5rem;
+}
+.modal-body{
+    display: flex;
+}
+.input-nomes{
+    display: flex;
+    flex-direction: column;
+}
+.input-idades{
+    display: flex;
+    flex-direction: column;
 }

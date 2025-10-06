@@ -21,13 +21,48 @@
         <div class="col mt-5">
             <div class="container">
                 <h2>Numero de jogadores:<span id="jogs"></span></h2>
-                <ul class="container d-flex">
-                    <li class="numJog m-1 rounded-2 border-0 text-center" id="li1" value="1">1</li>
-                    <li class="numJog m-1 rounded-2 border-0 text-center" id="li2" value="2">2</li>
-                    <li class="numJog m-1 rounded-2 border-0 text-center" id="li3" value="3">3</li>
-                    <li class="numJog m-1 rounded-2 border-0 text-center" id="li4" value="4">4</li>
-                </ul>
-                <div id="input-nomes"></div>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Escolher Jogadores
+                </button>
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <ul class="container d-flex justify-content-center">
+                                    <li class="numJog m-1 rounded-2 border-0 text-center fs-1 fw-bold" id="li1"
+                                        value="1">1</li>
+                                    <li class="numJog m-1 rounded-2 border-0 text-center fs-1 fw-bold" id="li2"
+                                        value="2">2</li>
+                                    <li class="numJog m-1 rounded-2 border-0 text-center fs-1 fw-bold" id="li3"
+                                        value="3">3</li>
+                                    <li class="numJog m-1 rounded-2 border-0 text-center fs-1 fw-bold" id="li4"
+                                        value="4">4</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrope">
+                                    Concluído
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="staticBackdrope" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div id="input-nomes" class="input-nomes"></div>
+                                <div id="input-idades" class="input-idades"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btnComecar btn btn-primary" id="btnComecar" data-bs-dismiss="modal">Começar Jogo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="container mt-5">
                 <button class="dado w-75 h-75 border-0 bg-white" id="dado">

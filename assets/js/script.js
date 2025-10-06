@@ -104,7 +104,7 @@ function criarJogadores(qtd) {
         inputContainer.appendChild(label);
     }
 
-const inputContainer1 = document.getElementById('input-nomes');
+const inputContainer1 = document.getElementById('input-idades');
 
 for (let i = 0; i < qtd; i++) {
         const label1 = document.createElement('label');
@@ -124,9 +124,7 @@ for (let i = 0; i < qtd; i++) {
         inputContainer1.appendChild(label1);
     }
 
-    const botaoIniciar = document.createElement('button');
-    botaoIniciar.textContent = 'Começar Jogo';
-    botaoIniciar.classList.add("btnComecar");
+    const botaoIniciar = document.getElementById("btnComecar");
     botaoIniciar.addEventListener('click', () => {
         jogadores = [];
 
@@ -142,11 +140,9 @@ for (let i = 0; i < qtd; i++) {
             });
         }
 
-        inputContainer.innerHTML = '';
         atualizarPosicoes();
     });
 
-    inputContainer.appendChild(botaoIniciar);
 }
 
 
