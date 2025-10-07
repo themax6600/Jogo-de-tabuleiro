@@ -65,6 +65,20 @@ document.getElementById('dado').addEventListener('click', () => {
     }
     resultadoDado = Math.floor(Math.random() * 6) + 1;
     resut.textContent = resultadoDado;
+    const imgDado = document.getElementById("imgDado");
+    if (resultadoDado === 1){
+        imgDado.src = "./assets/img/dado1.png";
+    }else if (resultadoDado === 2){
+        imgDado.src = "./assets/img/dado2.png";
+    }else if (resultadoDado === 3){
+        imgDado.src = "./assets/img/dado3.png";
+    }else if (resultadoDado === 4){
+        imgDado.src = "./assets/img/dado4.png";
+    }else if (resultadoDado === 5){
+        imgDado.src = "./assets/img/dado5.png";
+    }else{
+        imgDado.src = "./assets/img/dado6.png";
+    }
     card.classList.remove('visually-hidden');
     sortearPergunta();
 });
@@ -105,6 +119,7 @@ function criarJogadores(qtd) {
     }
 
 const inputContainer1 = document.getElementById('input-idades');
+inputContainer1.innerHTML = '';
 
 for (let i = 0; i < qtd; i++) {
         const label1 = document.createElement('label');
