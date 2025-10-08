@@ -19,14 +19,21 @@ const numCells1Linha = 20;
 function sortearPergunta() {
     const questaoIndex = Math.floor(Math.random() * perguntas.length);
     const questao = perguntas[questaoIndex];
-    title.textContent = questao.titulo;
+    
+    title.src = questao.imgQuestao;
     respost.innerHTML = '';
 
     questao.respostas.forEach((resposta, index) => {
         const botao = document.createElement('button');
-        botao.textContent = resposta;
         botao.classList.add("alternativa");
         botao.value = index;
+
+        const img = document.createElement('img');
+        img.src = resposta;
+        img.alt = `Alternativa ${index + 1}`;
+        img.classList.add("img-alternativa");
+
+        botao.appendChild(img);
 
         botao.addEventListener('click', () => {
             verificarResposta(index, questao.correta);

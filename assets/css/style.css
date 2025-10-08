@@ -5,6 +5,7 @@
 body{
     height: 100vh;
 }
+
 .peca {
     width: 20px;
     height: 20px;
@@ -119,11 +120,17 @@ body{
 }
 
 .alternativa{
-    width: 15rem;
-    height: 4rem;
-    border-radius: 3rem;
-    margin: 0.5rem;
+    border: 0;
+    padding: 10px;
+    margin-top: 10px;
 }
+
+.imgPergunta{
+    width: 250px;
+    height: 250px;
+    margin-bottom: 30px;
+}
+
 .modal-body{
     display: flex;
 }

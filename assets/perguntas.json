@@ -1,56 +1,60 @@
 [
     {
-        "titulo": "Qual é a capital do Brasil?",
+        "imgQuestao": "./assets/img/embalagem.jpeg",
         "respostas": [
-            "Rio de Janeiro",
-            "Brasília",
-            "São Paulo",
-            "Belo Horizonte",
-            "omg"
+            "./assets/img/lixo1.png",
+            "./assets/img/lixo2.png",
+            "./assets/img/lixo3.png",
+            "./assets/img/lixo4.png",
+            "./assets/img/lixo5.png"
         ],
         "correta": 1,
         "id": 1
     },
     {
-        "titulo": "Qual elemento químico tem o símbolo 'O'?",
+        "imgQuestao": "./assets/img/garrafaVidro.jpg",
         "respostas": [
-            "Ouro",
-            "Oxigênio",
-            "Prata",
-            "Ferro"
+            "./assets/img/lixo1.png",
+            "./assets/img/lixo2.png",
+            "./assets/img/lixo3.png",
+            "./assets/img/lixo4.png",
+            "./assets/img/lixo5.png"
         ],
         "correta": 1,
         "id": 2
     },
     {
-        "titulo": "Quantos continentes existem no mundo?",
+        "imgQuestao": "./assets/img/lataRefri.jpg",
         "respostas": [
-            "Cinco",
-            "Seis",
-            "Sete",
-            "Oito"
+            "./assets/img/lixo1.png",
+            "./assets/img/lixo2.png",
+            "./assets/img/lixo3.png",
+            "./assets/img/lixo4.png",
+            "./assets/img/lixo5.png"
         ],
         "correta": 2,
         "id": 3
     },
     {
-        "titulo": "Quem escreveu 'Dom Quixote'?",
+        "imgQuestao": "./assets/img/cascaLaranja.png",
         "respostas": [
-            "Miguel de Cervantes",
-            "William Shakespeare",
-            "Machado de Assis",
-            "José Saramago"
+            "./assets/img/lixo1.png",
+            "./assets/img/lixo2.png",
+            "./assets/img/lixo3.png",
+            "./assets/img/lixo4.png",
+            "./assets/img/lixo5.png"
         ],
         "correta": 0,
         "id": 4
     },
     {
-        "titulo": "Qual planeta é conhecido como planeta vermelho?",
+        "imgQuestao": "./assets/img/refriGarrafa.jpg",
         "respostas": [
-            "Vênus",
-            "Marte",
-            "Júpiter",
-            "Saturno"
+            "./assets/img/lixo1.png",
+            "./assets/img/lixo2.png",
+            "./assets/img/lixo3.png",
+            "./assets/img/lixo4.png",
+            "./assets/img/lixo5.png"
         ],
         "correta": 1,
         "id": 5
